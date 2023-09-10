@@ -12,7 +12,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'page_title' => 'Category'
+        ];
+        return view('front/category/index', $data);
     }
 
     /**
