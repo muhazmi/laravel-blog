@@ -13,7 +13,7 @@
               <p class="card-text">{{ Str::limit($post->description, 75) }}</p>
             </div>
             <div class="card-footer">
-              <a href="post/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+              <a href="post/{{ $post->slug }}" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Read more</a>
             </div>
           </div>
         </div>
