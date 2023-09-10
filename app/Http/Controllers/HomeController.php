@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $data = [
             'page_title' => 'Home',
-            'posts' => Post::latest()->limit(9)->get()
+            'posts' => Post::latesData(3)
         ];
         return view('front/home/index', $data);
     }

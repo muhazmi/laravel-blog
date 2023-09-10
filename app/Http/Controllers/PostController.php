@@ -14,7 +14,7 @@ class PostController extends Controller
     {
         $data = [
             'page_title' => 'All Posts',
-            'posts' => Post::latest()->limit(5)->get()
+            'posts' => Post::paginate(9)
         ];
         
         return view('front/post/index', $data);
