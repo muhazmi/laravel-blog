@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,10 @@ class HomeController extends Controller
     {
         $data = [
             'page_title' => 'Home',
-            'posts' => Post::latesData(3)
+            'posts' => Post::latestData(3),
+            'categories' => Category::select('name', 'slug')->get()
         ];
+
         return view('front/home/index', $data);
     }
 }
