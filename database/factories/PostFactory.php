@@ -27,7 +27,7 @@ class PostFactory extends Factory
             'name' => $name = $this->faker->sentence(rand(2,7)),
             'slug' => Str::slug($name),
             'description' => $this->faker->paragraph(),
-            'category_id' => rand(1,10),
+            'category_id' => rand(1,5),
             'author_id' => rand(1,10),
             'image' => $this->faker->imageUrl(),
         ];
