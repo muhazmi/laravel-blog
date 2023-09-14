@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    public static function latesData($data)
+    public static function latestData($data)
     {
         return static::latest()->limit($data)->get();
     }
