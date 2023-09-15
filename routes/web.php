@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
@@ -20,3 +21,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/post', [PostController::class, 'index']);
 
 Route::resource('/category', CategoryController::class);
+
+Route::controller(AuthController::class)->group(function() {
+  Route::get('/register', 'register')->name('register');
+  Route::post('/store', 'store')->name('store');
+  Route::get('/login', 'login')->name('login');
+  Route::post('/authenticate', 'authenticate')->name('authenticate');
+  Route::post('/logout', 'logout')->name('logout');
+
+  Route::get('/admin/dashboard', 'dashboard');
+});
